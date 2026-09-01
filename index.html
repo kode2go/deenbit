@@ -169,6 +169,48 @@
       font-size: 0.95rem;
     }
 
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .showcase-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .showcase-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: contain;
+      background: white;
+    }
+
+    .showcase-copy {
+      padding: 20px;
+    }
+
+    .showcase-copy h3 { margin: 0 0 6px; }
+    .showcase-copy p { margin: 0; color: var(--muted); }
+
+    .makecode {
+      margin-top: 24px;
+      text-align: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 20px;
+    }
+
+    .makecode h3 { margin: 0 0 8px; font-size: 1.4rem; }
+    .makecode p { color: var(--muted); max-width: 650px; margin: 0 auto 18px; }
+
     .learn {
       background: var(--soft);
       border-radius: 24px;
@@ -234,7 +276,8 @@
     }
 
     @media (max-width: 760px) {
-      .features {
+      .features,
+      .showcase-grid {
         grid-template-columns: 1fr;
       }
 
@@ -242,48 +285,210 @@
         padding-top: 40px;
       }
 
-      .learn {
+    .showcase-copy h3 { margin: 0 0 6px; }
+    .showcase-copy p { margin: 0; color: var(--muted); }
+
+    .makecode {
+      margin-top: 24px;
+      text-align: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 20px;
+    }
+
+    .makecode h3 { margin: 0 0 8px; font-size: 1.4rem; }
+    .makecode p { color: var(--muted); max-width: 650px; margin: 0 auto 18px; }
+
+    .learn {
         padding: 26px 18px;
       }
     }
+  
+    .visual-hero {
+      width: 100%;
+      margin: 0 0 56px;
+      overflow: hidden;
+      background: #eef8f4;
+    }
+
+    .visual-hero img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .size-demo {
+      max-width: 760px;
+      margin: 32px auto 0;
+    }
+
+    .size-demo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+    }
+
+    .size-demo p {
+      text-align: center;
+      color: var(--muted);
+      margin: 14px 0 0;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 12px 0;
+      background: rgba(248, 250, 248, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .top-nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .top-nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.94rem;
+      padding: 9px 12px;
+      border-radius: 10px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .top-nav a:hover {
+      background: var(--soft);
+      color: var(--accent-dark);
+    }
+
+    .top-nav .nav-cta {
+      background: var(--accent);
+      color: white;
+      margin-left: 4px;
+    }
+
+    .top-nav .nav-cta:hover {
+      background: var(--accent-dark);
+      color: white;
+    }
+
+    #features,
+    #inside,
+    #program,
+    #learn,
+    #buy {
+      scroll-margin-top: 92px;
+    }
+
+    @media (max-width: 760px) {
+      .site-header {
+        padding: 10px 0;
+      }
+
+      .nav-wrap {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .top-nav {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 3px;
+        scrollbar-width: thin;
+      }
+
+      .top-nav a {
+        white-space: nowrap;
+        flex: 0 0 auto;
+      }
+
+      .top-nav .nav-cta {
+        margin-left: 0;
+      }
+
+      html {
+        scroll-padding-top: 145px;
+      }
+
+      #features,
+      #inside,
+      #program,
+      #learn,
+      #buy {
+        scroll-margin-top: 145px;
+      }
+    }
+
   </style>
 </head>
 
-<body>
-  <header>
-    <div class="wrap">
-      <div class="brand">
+<body id="top">
+  <header class="site-header">
+    <div class="wrap nav-wrap">
+      <a class="brand" href="#top" aria-label="DeenBit home">
         <div class="brand-mark">☾</div>
         <span>DeenBit</span>
-      </div>
+      </a>
+
+      <nav class="top-nav" aria-label="Page sections">
+        <a href="#features">Features</a>
+        <a href="#inside">What's Inside</a>
+        <a href="#program">Program It</a>
+        <a href="projects.html">Projects</a>
+        <a href="accessories.html">Accessories</a>
+        <a class="nav-cta" href="#buy">Get a DeenBit</a>
+      </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="wrap">
-        <div class="eyebrow">DIY Programmable Tech</div>
-        <h1>DeenBit</h1>
-        <p class="tagline">
-          A simple and fun way to learn electronics, sensors and programming —
-          for young and old, with a Muslim focus.
-        </p>
-
-        <div class="hero-buttons">
-          <a class="btn btn-primary" href="#features">See what it does</a>
-          <a class="btn" href="#buy">Get a DeenBit</a>
-        </div>
-      </div>
+    
+    <section class="visual-hero" aria-label="DeenBit introduction">
+      <img
+        src="banner2.png"
+        alt="DeenBit DIY programmable technology banner showing the micro:bit and its main features"
+      >
     </section>
+
 
     <section id="features">
       <div class="wrap">
         <div class="section-title">
           <h2>Small device. Lots to explore.</h2>
           <p>
-            DeenBit comes with fun built-in features, but the best part is that
-            you can program it yourself and make it your own.
-          </p>
+            <strong>A micro:bit with a Muslim focus.</strong>
+DeenBit combines the BBC micro:bit with ready-to-use projects like a Thikr Counter, 
+Qibla Compass and clap-controlled night light — then lets you program it yourself.
+</p>
         </div>
 
         <div class="features">
@@ -326,7 +531,40 @@
       </div>
     </section>
 
-    <section>
+    <section id="inside">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>See what’s inside</h2>
+          <p>DeenBit is built around the BBC micro:bit V2 — packed with buttons, sensors, LEDs, sound and connections to explore.</p>
+        </div>
+
+        <div class="showcase-grid">
+          <div class="showcase-card">
+            <img src="features.png" alt="Features of the BBC micro:bit V2 including microphone, compass, accelerometer, buttons, LEDs and GPIO pins">
+            <div class="showcase-copy">
+              <h3>Explore the micro:bit</h3>
+              <p>Learn how the microphone, compass, temperature sensing, buttons, LED display and other electronics work.</p>
+            </div>
+          </div>
+
+          <div class="showcase-card">
+            <img src="kit.png" alt="BBC micro:bit kit with micro:bit board, USB cable, battery holder, batteries and box">
+            <div class="showcase-copy">
+              <h3>What you get</h3>
+              <p>A micro:bit V2 kit with the essentials to power it, connect it to a computer and start experimenting.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="makecode" id="program">
+          <h3>💻 Program DeenBit yourself</h3>
+          <p>Want to change what the buttons do or build something completely new? Use Microsoft MakeCode to program your micro:bit with simple blocks or JavaScript.</p>
+          <a class="btn btn-primary" href="https://makecode.microbit.org/" target="_blank" rel="noopener noreferrer">Start programming with MakeCode</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="learn">
       <div class="wrap">
         <div class="learn">
           <h2>Learn. Build. Experiment.</h2>
@@ -359,7 +597,7 @@
           <!-- Replace 27XXXXXXXXX with your WhatsApp number, including country code and no + or spaces -->
           <a
             class="btn btn-primary"
-            href="https://wa.me/27XXXXXXXXX?text=Hi%2C%20I%27m%20interested%20in%20DeenBit"
+            href="https://wa.me/2765095258?text=I%27m%20interested%20in%20DeenBit"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -370,7 +608,8 @@
     </section>
   </main>
 
-  <footer>
+  
+<footer>
     <div class="wrap">
       DeenBit — DIY Programmable Tech with a Muslim focus.
     </div>
