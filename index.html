@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DeenBit is a fun DIY programmable tech project with a Muslim focus — learn electronics, sensors and programming." />
+  <title>DeenBit | DIY Programmable Tech</title>
+
+  <style>
+    :root {
+      --bg: #f8faf8;
+      --card: #ffffff;
+      --text: #17332a;
+      --muted: #61736b;
+      --accent: #14845f;
+      --accent-dark: #0e6749;
+      --soft: #eaf6f1;
+      --border: #dce8e2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      width: min(1040px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 28px 0 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 1.25rem;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      color: white;
+      font-size: 1.3rem;
+    }
+
+    .hero {
+      padding: 60px 0 50px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent-dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .tagline {
+      margin: 18px auto 0;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+    }
+
+    .hero-buttons {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-weight: 750;
+      border: 1px solid var(--border);
+      background: white;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+    }
+
+    section {
+      padding: 40px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 26px;
+    }
+
+    .section-title h2 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+    }
+
+    .section-title p {
+      margin: 0 auto;
+      color: var(--muted);
+      max-width: 660px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .icon {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .learn {
+      background: var(--soft);
+      border-radius: 24px;
+      padding: 34px;
+      text-align: center;
+    }
+
+    .learn h2 {
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    .learn p {
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 auto 18px;
+    }
+
+    .pill-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 13px;
+      font-weight: 650;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 56px 0 70px;
+    }
+
+    .cta-box {
+      background: var(--text);
+      color: white;
+      border-radius: 24px;
+      padding: 38px 24px;
+    }
+
+    .cta-box h2 {
+      margin: 0 0 10px;
+      font-size: 2rem;
+    }
+
+    .cta-box p {
+      margin: 0 auto 22px;
+      max-width: 600px;
+      color: #d9e7e1;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 0 0 34px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 760px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      .learn {
+        padding: 26px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="brand">
+        <div class="brand-mark">☾</div>
+        <span>DeenBit</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow">DIY Programmable Tech</div>
+        <h1>DeenBit</h1>
+        <p class="tagline">
+          A simple and fun way to learn electronics, sensors and programming —
+          for young and old, with a Muslim focus.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#features">See what it does</a>
+          <a class="btn" href="#buy">Get a DeenBit</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Small device. Lots to explore.</h2>
+          <p>
+            DeenBit comes with fun built-in features, but the best part is that
+            you can program it yourself and make it your own.
+          </p>
+        </div>
+
+        <div class="features">
+          <div class="card">
+            <div class="icon">📿</div>
+            <h3>Button A — Thikr Counter</h3>
+            <p>Count your thikr and learn how buttons, variables and displays work.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🌡️</div>
+            <h3>Button B — Temperature</h3>
+            <p>Use the built-in sensor to explore temperature and simple sensor programming.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🧭</div>
+            <h3>A + B — Qibla Compass</h3>
+            <p>Explore direction, compass sensing and how technology can help find Qibla.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">👏</div>
+            <h3>Clap — Night Light</h3>
+            <p>Use sound detection to switch a light on and off with a clap.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">💡</div>
+            <h3>LED Display</h3>
+            <p>Create icons, animations, messages and your own custom displays.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">💻</div>
+            <h3>Program It Yourself</h3>
+            <p>Change the code, add new ideas and turn DeenBit into your own project.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="learn">
+          <h2>Learn. Build. Experiment.</h2>
+          <p>
+            DeenBit is made for anyone curious about technology. Start with the
+            built-in features, then connect it to a computer and experiment with
+            your own programs. No experience needed — just curiosity.
+          </p>
+
+          <div class="pill-row">
+            <span class="pill">Electronics</span>
+            <span class="pill">Programming</span>
+            <span class="pill">Sensors</span>
+            <span class="pill">STEM</span>
+            <span class="pill">Creativity</span>
+            <span class="pill">Muslim-focused projects</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="buy">
+      <div class="wrap">
+        <div class="cta-box">
+          <h2>Want your own DeenBit?</h2>
+          <p>
+            To purchase, ask questions or find out more, contact us on WhatsApp.
+          </p>
+
+          <!-- Replace 27XXXXXXXXX with your WhatsApp number, including country code and no + or spaces -->
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/27XXXXXXXXX?text=Hi%2C%20I%27m%20interested%20in%20DeenBit"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      DeenBit — DIY Programmable Tech with a Muslim focus.
+    </div>
+  </footer>
+</body>
+</html>
