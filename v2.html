@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DeenBit v2.0 is a concept for a custom South African educational computer inspired by the micro:bit and shaped around the crescent." />
+  <title>DeenBit v2.0 | Designed in South Africa</title>
+
+  <style>
+    :root {
+      --bg: #f8faf8;
+      --card: #ffffff;
+      --text: #17332a;
+      --muted: #61736b;
+      --accent: #14845f;
+      --accent-dark: #0e6749;
+      --soft: #eaf6f1;
+      --border: #dce8e2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      width: min(1040px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 28px 0 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 1.25rem;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      color: white;
+      font-size: 1.3rem;
+    }
+
+    .hero {
+      padding: 60px 0 50px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent-dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .tagline {
+      margin: 18px auto 0;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+    }
+
+    .hero-buttons {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-weight: 750;
+      border: 1px solid var(--border);
+      background: white;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+    }
+
+    section {
+      padding: 40px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 26px;
+    }
+
+    .section-title h2 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+    }
+
+    .section-title p {
+      margin: 0 auto;
+      color: var(--muted);
+      max-width: 660px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .icon {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .showcase-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .showcase-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: contain;
+      background: white;
+    }
+
+    .showcase-copy {
+      padding: 20px;
+    }
+
+    .showcase-copy h3 { margin: 0 0 6px; }
+    .showcase-copy p { margin: 0; color: var(--muted); }
+
+    .makecode {
+      margin-top: 24px;
+      text-align: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 20px;
+    }
+
+    .makecode h3 { margin: 0 0 8px; font-size: 1.4rem; }
+    .makecode p { color: var(--muted); max-width: 650px; margin: 0 auto 18px; }
+
+    .learn {
+      background: var(--soft);
+      border-radius: 24px;
+      padding: 34px;
+      text-align: center;
+    }
+
+    .learn h2 {
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    .learn p {
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 auto 18px;
+    }
+
+    .pill-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 13px;
+      font-weight: 650;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 56px 0 70px;
+    }
+
+    .cta-box {
+      background: var(--text);
+      color: white;
+      border-radius: 24px;
+      padding: 38px 24px;
+    }
+
+    .cta-box h2 {
+      margin: 0 0 10px;
+      font-size: 2rem;
+    }
+
+    .cta-box p {
+      margin: 0 auto 22px;
+      max-width: 600px;
+      color: #d9e7e1;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 0 0 34px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 760px) {
+      .features,
+      .showcase-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+    .showcase-copy h3 { margin: 0 0 6px; }
+    .showcase-copy p { margin: 0; color: var(--muted); }
+
+    .makecode {
+      margin-top: 24px;
+      text-align: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 20px;
+    }
+
+    .makecode h3 { margin: 0 0 8px; font-size: 1.4rem; }
+    .makecode p { color: var(--muted); max-width: 650px; margin: 0 auto 18px; }
+
+    .learn {
+        padding: 26px 18px;
+      }
+    }
+  
+    .visual-hero {
+      width: 100%;
+      margin: 0 0 56px;
+      overflow: hidden;
+      background: #eef8f4;
+    }
+
+    .visual-hero img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .size-demo {
+      max-width: 760px;
+      margin: 32px auto 0;
+    }
+
+    .size-demo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+    }
+
+    .size-demo p {
+      text-align: center;
+      color: var(--muted);
+      margin: 14px 0 0;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 12px 0;
+      background: rgba(248, 250, 248, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .top-nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .top-nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.94rem;
+      padding: 9px 12px;
+      border-radius: 10px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .top-nav a:hover {
+      background: var(--soft);
+      color: var(--accent-dark);
+    }
+
+    .top-nav .nav-cta {
+      background: var(--accent);
+      color: white;
+      margin-left: 4px;
+    }
+
+    .top-nav .nav-cta:hover {
+      background: var(--accent-dark);
+      color: white;
+    }
+
+    #features,
+    #inside,
+    #program,
+    #learn,
+    #buy {
+      scroll-margin-top: 92px;
+    }
+
+    @media (max-width: 760px) {
+      .site-header {
+        padding: 10px 0;
+      }
+
+      .nav-wrap {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .top-nav {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 3px;
+        scrollbar-width: thin;
+      }
+
+      .top-nav a {
+        white-space: nowrap;
+        flex: 0 0 auto;
+      }
+
+      .top-nav .nav-cta {
+        margin-left: 0;
+      }
+
+      html {
+        scroll-padding-top: 145px;
+      }
+
+      #features,
+      #inside,
+      #program,
+      #learn,
+      #buy {
+        scroll-margin-top: 145px;
+      }
+    }
+
+  </style>
+  
+<style>
+  .v2-hero {
+    padding: 60px 0 36px;
+    text-align: center;
+  }
+
+  .v2-hero h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .v2-hero p {
+    margin: 18px auto 0;
+    max-width: 760px;
+    color: var(--muted);
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+  }
+
+  .concept-wrap {
+    margin-top: 34px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .concept-wrap img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .concept-note {
+    padding: 12px 18px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .v2-copy {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--muted);
+  }
+
+  .v2-copy p {
+    margin: 0 0 16px;
+  }
+
+  .vision-box {
+    background: var(--text);
+    color: white;
+    border-radius: 24px;
+    padding: 38px 28px;
+    text-align: center;
+  }
+
+  .vision-box h2 {
+    margin: 0 0 12px;
+    font-size: 2rem;
+  }
+
+  .vision-box p {
+    color: #d9e7e1;
+    max-width: 760px;
+    margin: 0 auto 16px;
+  }
+
+  .sa-pill {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    border: 1px solid #668278;
+    border-radius: 999px;
+    font-weight: 700;
+  }
+
+  @media (max-width: 760px) {
+    .v2-hero {
+      padding-top: 40px;
+    }
+  }
+</style>
+
+</head>
+
+<body id="top">
+  <header class="site-header">
+    <div class="wrap nav-wrap">
+      <a class="brand" href="index.html" aria-label="DeenBit home">
+        <div class="brand-mark">☾</div>
+        <span>DeenBit</span>
+      </a>
+
+      <nav class="top-nav" aria-label="Site navigation">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#inside">What's Inside</a>
+        <a href="index.html#program">Program It</a>
+        <a href="projects.html">Projects</a>
+        <a href="accessories.html">Accessories</a>
+        <a href="v2.html">DeenBit v2.0</a>
+        <a class="nav-cta" href="index.html#buy">Get a DeenBit</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="v2-hero">
+      <div class="wrap">
+        <span class="eyebrow">The next generation of DeenBit</span>
+        <h1>DeenBit v2.0</h1>
+        <p>
+          Our vision for a custom educational computer designed in South Africa —
+          inspired by the micro:bit, shaped around the crescent, and built for
+          learning, creativity and experimentation.
+        </p>
+
+        <div class="concept-wrap">
+          <img src="deenbit-v2-concept.png"
+               alt="Concept design for a crescent-shaped DeenBit v2.0 educational computer">
+          <div class="concept-note">
+            Concept illustration — final hardware, components and design may change.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-title">
+          <h2>From micro:bit to DeenBit</h2>
+        </div>
+        <div class="v2-copy">
+          <p>
+            DeenBit currently uses the BBC micro:bit as a powerful platform for
+            introducing programming, electronics and sensors.
+          </p>
+          <p>
+            DeenBit v2.0 explores the next step: designing our own board while
+            keeping the simplicity and hands-on learning experience that makes
+            the micro:bit so accessible.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-title">
+          <h2>A board with its own identity</h2>
+          <p>
+            A custom educational board shaped around the crescent, with a focus
+            on local design, learning and experimentation.
+          </p>
+        </div>
+
+        <div class="features">
+          <div class="card">
+            <div class="icon">☾</div>
+            <h3>Crescent Design</h3>
+            <p>A distinctive PCB shape inspired by the crescent rather than a conventional rectangular development board.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🇿🇦</div>
+            <h3>South African</h3>
+            <p>Designed locally with the long-term goal of local manufacture, assembly and skills development.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">💻</div>
+            <h3>Programmable</h3>
+            <p>A beginner-friendly programmable board for learning coding, electronics and physical computing.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🔌</div>
+            <h3>Expandable</h3>
+            <p>Connections for sensors, lights, motors and other accessories so learners can keep building.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">💡</div>
+            <h3>LED Display</h3>
+            <p>Built-in LEDs for numbers, symbols, animations and interactive projects.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon">🌡️</div>
+            <h3>Built-in Sensors</h3>
+            <p>Explore integrating motion, temperature, sound, light and other sensors directly onto the board.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="vision-box">
+          <h2>Designed here. Built here. Learned on everywhere.</h2>
+          <p>
+            The long-term DeenBit vision is bigger than a single device. We want
+            to explore how locally designed educational technology can help
+            develop programming, electronics, engineering and manufacturing
+            skills in South Africa.
+          </p>
+          <p>
+            DeenBit v2.0 is currently a concept and development journey. The final
+            hardware, components and design may evolve as we prototype and learn.
+          </p>
+          <span class="sa-pill">Concept developed in South Africa 🇿🇦</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      DeenBit v2.0 — A South African educational technology concept.
+    </div>
+  </footer>
+</body>
+</html>
